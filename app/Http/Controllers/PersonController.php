@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendPost;
 use App\Models\Person;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PersonController extends Controller
 {
@@ -40,6 +42,16 @@ class PersonController extends Controller
             'cell_phone_number' => $request['cell_phone_number'],
             
         ]);
+
+        //envio de mail
+        $details = [
+            'message' => "El usuario ". $request['first_name'] . "se ha regristrado",
+            'first_name' => $request['first_name'],
+            'email' => $request['email'],
+            'cell_phone_number' => $request['cell_phone_number'],
+        ];
+
+        Mail::to('jeremiasoviedo01@gmail.com')->send(new SendPost($details));
 
         return response()->json([
             'message' => 'Se agregó correctamente a la Persona',
