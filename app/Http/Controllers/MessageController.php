@@ -29,11 +29,13 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'message' => 'required'
+            'message' => 'required',
+            'people_id'=>'required'
         ]);
 
         $message = Message::create([
-            'message' => $request['message']
+            'message' => $request['message'],
+            'people_id' => $request['people_id']
             
         ]);
 

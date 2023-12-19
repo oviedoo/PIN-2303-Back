@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Person
+//People
 Route::post('add-people', [PeopleController::class, 'store']);
 
 //Mesagge
