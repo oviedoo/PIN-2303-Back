@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>{{ $details['message'] }}</h1>
-    <p>Nombre: {{ $details['first_name'] }}</p>
+    <p>Nombre: {{ $details['name'] }}</p>
     <p>Correo: {{ $details['email'] }}</p>
-    <p>Número Celular: {{ $details['cell_phone_number'] }}</p>
+    <p>Número Celular: {{ $details['cell'] }}</p>
     <p>Gracias por registrarte!</p>
 </body>
 </html>
