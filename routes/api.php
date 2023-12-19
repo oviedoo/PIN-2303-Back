@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\PersonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Person
-Route::post('add-person', [PersonController::class, 'store']);
+Route::post('add-people', [PeopleController::class, 'store']);
 
 //Mesagge
 Route::post('add-message', [MessageController::class, 'store']); 
