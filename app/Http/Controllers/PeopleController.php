@@ -33,6 +33,7 @@ class PeopleController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|unique:people,email',
+            
             'cell' => 'required'
         ]);
 
